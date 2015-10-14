@@ -7,7 +7,7 @@
 > 견적요청  
 > 견적요청은 무료이며, 신청만 하면 하루 또는 이틀 후 메일로 견적서가 도착합니다.  
 >
-> ** [견적 요청 하러가기](http://www.webwatch.co.kr/Support/Inq_Form.html?ICatNo=1&MenuCD=410) **
+> **[견적 요청 하러가기](http://www.webwatch.co.kr/Support/Inq_Form.html?ICatNo=1&MenuCD=410)**
 
 <br />
 
@@ -40,7 +40,7 @@
 <br /><br />
 
 ### 획득 후
-> 인증마크 유효기간은 1년입니다.
-> 1년이 지나면 심사를 다시 받아서 갱신해야 합니다.
-> ** [유효기간확인 하기](http://www.webwatch.co.kr/Situation/WA_Situation.html?MenuCD=110) **  
-> 유효기간이 지나고 한달 안에 신청해야 갱신이 되고, 한달이 지나면 신규신청으로 바뀌니 빨리 갱신 하는 것이 좋습니다.
+> 인증마크 유효기간은 1년입니다.  
+> 1년이 지나면 심사를 다시 받아서 갱신해야 합니다.  
+> **[유효기간확인 하기](http://www.webwatch.co.kr/Situation/WA_Situation.html?MenuCD=110)**  
+> 유효기간이 지나고 한달 안에 신청해야 갱신이 되고, 한달이 지나면 신규신청으로 바뀌니 빨리 갱신 하는 것이 좋습니다.  
