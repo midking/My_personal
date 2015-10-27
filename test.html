@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+</head>
+<body>
+<button>확장</button>
+<div class="file">
+	<div class="ttt"><input type="file" id="file1"><a href="#this" class="close">삭제</a></div>
+</div>
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('button').on('click', function(){
+			$("#file1").parent('.ttt').clone(true).appendTo('.file');
+			$('.ttt input').each(function(index){
+				console.log("test");
+				index+=1;
+				$(this).attr('id', "file"+index);
+			});
+		});
+		$('.close').on('click', function(){
+			console.log("ttt");
+			$(this).parent('.ttt').remove();
+		});
+	});
+</script>
+</body>
+</html>
