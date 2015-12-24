@@ -11,6 +11,23 @@
 <div class="file">
 	<div class="ttt"><input type="file" id="file1"><a href="#this" class="close">삭제</a></div>
 </div>
+<script>
+		var $width;
+		$('.depth').on('mouseenter', function(){
+			$width = $(this).width();
+			var $thisWidth = $(this).find('div').width();
+			$(this).find('div').stop().slideDown();
+			$(this).animate({
+				width: $thisWidth+20
+			},1000);
+		});
+		$('.depth').on('mouseleave', function(){
+			$(this).find('div').stop().slideUp();
+			$(this).animate({
+				width: $width
+			},1000);
+		});
+	</script>
 
 
 <script type="text/javascript">
