@@ -50,6 +50,9 @@ config.rb 파일이 있는 위치에서 command창을 열고
 ```bash
 compass watch
 ```
+설정된 폴더 안에 파일들을 감지하여 변환시키는 일을 합니다.  
+
+<br />
 
 #### compass watch가 하는 일
 1. sass폴더 안에 있는 .sass파일을 css폴더안에 있는 .css 파일로 변환
@@ -59,11 +62,39 @@ compass watch
 그 외에도 html, css, js의 압축등을 합니다. 
 <br />
 
-### config.rb 설정
-config.루비 파일은 compass를 동작하기 위한 설정파일 입니다.
+#### config.rb 설정
+config.rb(.루비) 파일은 compass를 동작하기 위한 설정파일 입니다.
+
+- 폴더의 경로를 지정
+- css 변환 스타일을 설정
+- 변경될 파일 이름 설정
+- sprite image의 image간 간격등 설정 등등 
+
+사용자의 입맛대로 설정이 가능합니다.
+
+<br />
+
+#### sprite image를 여러개 만들고 싶다면?
+
+sass/sprite.scss  < 파일 수정
+
+![폴더 추가](images/img_sample03.png)
+sprite image로 만들 폴더의 경로로 sprite-map 라인을 하나 추가하면 됩니다.
+
+<br />
+
+#### 모바일에서 사용하고 싶다면?
+
+모바일은 디자인이 2배로 나오고, 작업은 1/2로 작업해야 하기 때문에, sprite image 또한 1/2이어야 합니다.
+
+sass/sprite.scss  < 파일 수정
 
 
+![모바일설정](images/img_sample04.png)
 
+<br />
+
+#### 사용할 때 신경써야 할 부분
 
 
 <br /><br /><br /><br />
