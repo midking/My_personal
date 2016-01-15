@@ -18,7 +18,52 @@
 
 만들어진 후 사용하고자 하는 장소에 class="이미지명" 만 입력하면 됩니다.
 
-### 간단한 사용법
+<br />
 
-#### sass, compass 설치
+### 어떻게 쓰는건데?
+
+#### ruby 설치
 sass와 compass는 ruby 기반으로 돌아가기 때문에 ruby를 설치해야 합니다.  
+os x는 기본적으로 ruby가 설치되어있고, windows 사용자만 설치해주세요.  
+
+[ruby install 다운로드 바로가기](http://rubyinstaller.org/downloads/)
+
+![다운로드](images/img_sample01.png)
+
+#### sass 설치
+이제 command 창에서 gem을 통해 sass와 compass를 설치 할 수 있습니다.
+```bash
+gem install sass
+```
+
+#### compass 설치
+```bash
+gem install compass
+```
+
+#### 파일 다운로드
+compass sprite image 폴더 다운로드  
+
+![폴더 열기](images/img_sample02.png)
+
+config.rb 파일이 있는 위치에서 command창을 열고  
+```bash
+compass watch
+```
+
+#### compass watch가 하는 일
+1. sass폴더 안에 있는 .sass파일을 css폴더안에 있는 .css 파일로 변환
+2. images/sp, images/icon 폴더 안에 있는 이미지를 images/sprites/ 경로에 sprite image로 뱉어냄
+3. sp, icon 폴더 안에 있는 모든 이미지의 width, height, background 정보를 .css로 뱉어냄
+
+그 외에도 html, css, js의 압축등을 합니다. 
+<br />
+
+### config.rb 설정
+config.루비 파일은 compass를 동작하기 위한 설정파일 입니다.
+
+
+
+
+
+<br /><br /><br /><br />
