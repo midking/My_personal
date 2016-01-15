@@ -13,15 +13,15 @@
 
 ##### 인증심사에 필요한 준비물은?
 
-1. 인증신청서 ([양식다운](http://www.webwatch.co.kr/Req/WA_Req_File.html?MenuCD=130)) 받아서 작성  
+1. 인증신청서 작성 ([양식다운](http://www.webwatch.co.kr/Req/WA_Req_File.html?MenuCD=130))  
 2. 사업자등록증  
 3. 자가진단결과
 
 자가진단결과?  
-> 접근성 자동진단 툴을 이용해서 자가진단을 하고 결과가 95%이상 되면 이미지 캡쳐  
+> 접근성 자동진단 툴의 자가진단 결과(95%이상 이미지 캡쳐)  
 > [KWAH4(카도와)](http://www.wah.or.kr/Participation/k-wah.asp)를 사용  
 
-3개의 준비물을 다 준비했다면  <br />
+3개의 준비물을 다 준비했다면  
 **[인증신청 하러가기](http://www.webwatch.co.kr/Req/WA_Req_File.html?MenuCD=130)**
 
 <br /><br />
