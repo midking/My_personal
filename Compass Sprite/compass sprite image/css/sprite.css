@@ -1,0 +1,91 @@
+.sp, .aaa, .bbb, .sp01, .sp03, .sp04 {
+  display: inline-block;
+  background-image: url('../images/sprites/sp.png?');
+  background-repeat: no-repeat;
+  background-size: 137px 375px;
+}
+
+.aaa {
+  width: 51px;
+  height: 31px;
+  background-position: 0 -71px;
+}
+
+.bbb {
+  width: 88px;
+  height: 88px;
+  background-position: 0 -125px;
+}
+
+.sp01 {
+  width: 137px;
+  height: 142px;
+  background-position: 0 -233px;
+}
+
+.sp03 {
+  width: 44px;
+  height: 34px;
+  background-position: -71px -71px;
+}
+
+.sp04 {
+  width: 51px;
+  height: 51px;
+  background-position: 0 0;
+}
+
+.icon, .ico_um197_01, .ico_um197_02, .ico_um197_03, .ico_um197_04, .ico_um912_01, .ico_um912_02, .ico_um912_03, .ico_um912_04 {
+  display: inline-block;
+  background-image: url('../images/sprites/icon.png?');
+  background-repeat: no-repeat;
+  background-size: 72px 660px;
+}
+
+.ico_um197_01 {
+  width: 58px;
+  height: 58px;
+  background-position: 0 0;
+}
+
+.ico_um197_02 {
+  width: 58px;
+  height: 58px;
+  background-position: 0 -78px;
+}
+
+.ico_um197_03 {
+  width: 58px;
+  height: 58px;
+  background-position: 0 -156px;
+}
+
+.ico_um197_04 {
+  width: 58px;
+  height: 58px;
+  background-position: 0 -234px;
+}
+
+.ico_um912_01 {
+  width: 72px;
+  height: 72px;
+  background-position: 0 -312px;
+}
+
+.ico_um912_02 {
+  width: 72px;
+  height: 72px;
+  background-position: 0 -404px;
+}
+
+.ico_um912_03 {
+  width: 72px;
+  height: 72px;
+  background-position: 0 -496px;
+}
+
+.ico_um912_04 {
+  width: 72px;
+  height: 72px;
+  background-position: 0 -588px;
+}
