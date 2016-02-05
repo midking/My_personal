@@ -1,0 +1,124 @@
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto;
+}
+
+.embed-container iframe, .embed-container object, .embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* test */
+#viewContentBox {
+  margin: 0 5%;
+}
+
+.embed-container {
+  margin-top: 1.563rem;
+}
+
+.h1, .h2, .h3 {
+  color: #212121;
+}
+
+.h1 {
+  font-size: 1.375rem;
+}
+
+.h2 {
+  font-size: 1.125rem;
+  margin-top: 1.5625rem;
+  margin-bottom: 0.1875rem;
+}
+
+.h3 {
+  font-size: 1.125rem;
+}
+
+.h4 {
+  font-size: 0.875rem;
+}
+
+.h1 {
+  margin-bottom: 0.4375rem;
+}
+
+.test {
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.h3 {
+  font-size: 0.875rem;
+  font-weight: bold;
+  margin-bottom: 0.3125rem;
+  margin-top: 0.9375rem;
+}
+
+.textp {
+  font-size: 0.875rem;
+}
+
+.grayList {
+  margin-top: 0.4375rem;
+  font-size: 0.875rem;
+}
+.grayList .normal {
+  font-weight: bold;
+}
+.grayList li:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.3125rem;
+  width: 0.25rem;
+  height: 0.25rem;
+  border-radius: 0.125rem;
+  background-color: #777;
+}
+
+.imgFull img {
+  width: 100%;
+}
+
+a.mBtn {
+  text-decoration: none;
+  color: #fff;
+  background-color: #3b4251;
+  padding: 0.3125rem 0.625rem;
+}
+
+.tCenter {
+  margin-top: 1.25rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 320px) {
+  html {
+    font-size: 1em;
+  }
+}
+@media screen and (min-width: 375px) {
+  html {
+    font-size: 1.2em;
+  }
+}
+@media screen and (min-width: 450px) {
+  html {
+    font-size: 1.4em;
+  }
+}
+@media screen and (min-width: 600px) {
+  html {
+    font-size: 1.55em;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
