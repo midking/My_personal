@@ -1,7 +1,7 @@
 @charset "UTF-8";
 .sp, .sp_um193_02, .sp_um197_02, .sp_um197_03 {
   display: inline-block;
-  background-image: url('../images/sprites/sp.png?');
+  background-image: url('../images/sprites/sp.png?fe8d1c1');
   background-repeat: no-repeat;
   background-size: 58px 190px;
 }
@@ -27,7 +27,7 @@
 
 .icon, .bullet000, .bulletababab, .icoUniversity, .ico_um193_01, .ico_um193_02, .ico_um193_03, .ico_um193_04, .ico_um197_02, .ico_um197_03, .ico_um197_04, .ico_um912_02, .ico_um912_03, .ico_um912_04 {
   display: inline-block;
-  background-image: url('../images/sprites/icon.png?');
+  background-image: url('../images/sprites/icon.png?fe8d1c1');
   background-repeat: no-repeat;
   background-size: 94px 703px;
 }
@@ -113,7 +113,7 @@
 
 .unib, .logo_um190_02, .logo_um190_03, .logo_um190_04, .logo_um190_05, .logo_um190_06, .logo_um190_07, .logo_university02, .logo_university03, .logo_university04, .logo_university05, .logo_university06, .logo_university07 {
   display: inline-block;
-  background-image: url('../images/sprites/unib.png?');
+  background-image: url('../images/sprites/unib.png?fe8d1c1');
   background-repeat: no-repeat;
   background-size: 154px 604px;
 }
