@@ -1,0 +1,37 @@
+@charset UTF-8;
+
+@font-face{
+    font-family:ng;
+    src:url(NanumGothic.eot);
+    src:local(※), url(NanumGothic.woff) format(‘woff’)
+}
+
+html{width:100%;}
+body{font-family:'나눔고딕', 'NanumGothic', ng;width:100%;font-size:14px;color:#7f7f7f;}
+h1, h2, h3, h4, h5, h6{font-size:14px;text-align:center;}
+/*reset*/
+body, ul, dl, dd, h1, h2, h3, h4, h5, h6, p{margin: 0;}
+ul, li{padding: 0;}
+li{list-style: none;}
+div, li, a{box-sizing:border-box;}
+
+/*main*/
+#top-title{height:40px;z-index:1000;padding: 0 10px;color: #fff;background:#717171;position:fixed;top:0;left:0;width:100%;text-align: center;}
+#content{margin-top:40px;padding:10px;}
+
+h2{margin-bottom: 10px;margin-top:20px;font-size: 18px;}
+.profile dt,
+.profile dd{text-align: center;}
+.profile dt{margin-bottom:5px;margin-top:10px;color:#717171;font-weight: bold;}
+.profile dd{color: #919191;}
+
+.timeline li{border:1px solid #717171;border-radius:5px;padding:10px 20px;margin-bottom:10px;}
+.timeline h3{text-align:left;margin-bottom: 10px;}
+
+.portfolio{margin:0 auto;width:320px;}
+.portfolio li{position:relative;margin-bottom:10px;max-width:320px;border:1px solid #717171;}
+.portfolio li:hover:before{content:'';display:block;position:absolute;top:0;left: 0;right: 0;bottom: 0;background:rgba(0,0,0,0.6);}
+.portfolio img{display:block;width:100%;}
+.portfolio a{display:block;position:absolute;top:0;left: 0;right: 0;bottom: 0;text-decoration: none;}
+.portfolio a span{color: #fff;display:block;text-align: center;vertical-align: middle;margin-top:30px;font-size: 18px;opacity:0;}
+.portfolio a:hover span{opacity:1;}
