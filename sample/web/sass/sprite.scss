@@ -8,8 +8,7 @@ $retina: false;
 
 $sprite-list:
 	sprite-map("sp/*.png", $layout: smart, $spacing: 20px)
-	sprite-map("icon/*.png", $layout: smart, $spacing: 20px)
-	sprite-map("unib/*.png", $layout: smart, $spacing: 20px);
+	sprite-map("icon/*.png", $layout: smart, $spacing: 20px);
 
 @each $map-name in $sprite-list{
 	$url: sprite-url($map-name);
@@ -21,6 +20,11 @@ $sprite-list:
 		display:inline-block;
 		background-image: $url;
 		background-repeat:no-repeat;
+		text-indent: -999px;
+		overflow: hidden;
+		display: inline-block;
+		line-height: 0;
+		white-space: nowrap;
 		@if $retina == false{
 			background-size:$background-width $background-height;
 		}@else if $retina == true{

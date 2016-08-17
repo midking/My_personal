@@ -1,34 +1,32 @@
 @charset "UTF-8";
-.sp, .sp_um193_02, .sp_um197_02, .sp_um197_03 {
+.sp, .ico_um197_02 {
   display: inline-block;
-  background-image: url('../images/sprites/sp.png?fe8d1c1');
+  background-image: url('../images/sprites/sp.png?905d7a5');
   background-repeat: no-repeat;
-  background-size: 58px 190px;
+  text-indent: -999px;
+  overflow: hidden;
+  display: inline-block;
+  line-height: 0;
+  white-space: nowrap;
+  background-size: 58px 58px;
 }
 
 /* sprite-names: map(list)의 모든 스프라이트 목록의 네이밍을 반환  */
-.sp_um193_02 {
-  width: 34px;
-  height: 34px;
+.ico_um197_02 {
+  width: 58px;
+  height: 58px;
   background-position: 0 0;
-}
-
-.sp_um197_02 {
-  width: 58px;
-  height: 58px;
-  background-position: 0 -54px;
-}
-
-.sp_um197_03 {
-  width: 58px;
-  height: 58px;
-  background-position: 0 -132px;
 }
 
 .icon, .bullet000, .bulletababab, .icoUniversity, .ico_um193_01, .ico_um193_02, .ico_um193_03, .ico_um193_04, .ico_um197_02, .ico_um197_03, .ico_um197_04, .ico_um912_02, .ico_um912_03, .ico_um912_04 {
   display: inline-block;
-  background-image: url('../images/sprites/icon.png?fe8d1c1');
+  background-image: url('../images/sprites/icon.png?905d7a5');
   background-repeat: no-repeat;
+  text-indent: -999px;
+  overflow: hidden;
+  display: inline-block;
+  line-height: 0;
+  white-space: nowrap;
   background-size: 94px 703px;
 }
 
@@ -109,86 +107,6 @@
   width: 72px;
   height: 72px;
   background-position: 0 -631px;
-}
-
-.unib, .logo_um190_02, .logo_um190_03, .logo_um190_04, .logo_um190_05, .logo_um190_06, .logo_um190_07, .logo_university02, .logo_university03, .logo_university04, .logo_university05, .logo_university06, .logo_university07 {
-  display: inline-block;
-  background-image: url('../images/sprites/unib.png?fe8d1c1');
-  background-repeat: no-repeat;
-  background-size: 154px 604px;
-}
-
-/* sprite-names: map(list)의 모든 스프라이트 목록의 네이밍을 반환  */
-.logo_um190_02 {
-  width: 104px;
-  height: 24px;
-  background-position: 0 0;
-}
-
-.logo_um190_03 {
-  width: 89px;
-  height: 24px;
-  background-position: 0 -44px;
-}
-
-.logo_um190_04 {
-  width: 106px;
-  height: 32px;
-  background-position: 0 -278px;
-}
-
-.logo_um190_05 {
-  width: 109px;
-  height: 26px;
-  background-position: 0 -88px;
-}
-
-.logo_um190_06 {
-  width: 104px;
-  height: 26px;
-  background-position: 0 -134px;
-}
-
-.logo_um190_07 {
-  width: 98px;
-  height: 26px;
-  background-position: 0 -180px;
-}
-
-.logo_university02 {
-  width: 133px;
-  height: 32px;
-  background-position: 0 -226px;
-}
-
-.logo_university03 {
-  width: 133px;
-  height: 36px;
-  background-position: 0 -386px;
-}
-
-.logo_university04 {
-  width: 154px;
-  height: 47px;
-  background-position: 0 -557px;
-}
-
-.logo_university05 {
-  width: 153px;
-  height: 37px;
-  background-position: 0 -442px;
-}
-
-.logo_university06 {
-  width: 151px;
-  height: 36px;
-  background-position: 0 -330px;
-}
-
-.logo_university07 {
-  width: 149px;
-  height: 38px;
-  background-position: 0 -499px;
 }
 
 /*# sourceMappingURL=sprite.css.map */

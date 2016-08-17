@@ -17,7 +17,7 @@ var fs = require('fs'),
 var basePath = path.join(__dirname, '/web');
 
 /* 이미지명을 추출하기 위한 폴더명 추가 반드시 basePath 안에 있는 폴더여야 합니다. */
-var dirList = ['icon', 'sp', 'unib'];
+var dirList = ['icon', 'sp'];
 
 /* 참고할 tamplate 파일 경로 */
 var templatePath = path.join(basePath, '/@template/@spriteTemplate.html');
