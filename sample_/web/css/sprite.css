@@ -1,0 +1,76 @@
+@charset "UTF-8";
+.sp, .ico_um197_02 {
+  display: inline-block;
+  background-image: url('../images/sprites/sp.png?ef1b09b');
+  background-repeat: no-repeat;
+  text-indent: -999px;
+  overflow: hidden;
+  display: inline-block;
+  line-height: 0;
+  white-space: nowrap;
+  background-size: 19.33333px 19.33333px;
+}
+
+/* sprite-names: map(list)의 모든 스프라이트 목록의 네이밍을 반환  */
+.ico_um197_02 {
+  width: 19.33333px;
+  height: 19.33333px;
+  background-position: 0 0;
+}
+
+.icon, .btn_mainMenu_0, .btn_mainMenu_1, .btn_mainMenu_2, .btn_mainMenu_3, .icon_menu, .line_foot, .logo_lh {
+  display: inline-block;
+  background-image: url('../images/sprites/icon.png?ef1b09b');
+  background-repeat: no-repeat;
+  text-indent: -999px;
+  overflow: hidden;
+  display: inline-block;
+  line-height: 0;
+  white-space: nowrap;
+  background-size: 70px 384px;
+}
+
+/* sprite-names: map(list)의 모든 스프라이트 목록의 네이밍을 반환  */
+.btn_mainMenu_0 {
+  width: 70px;
+  height: 70px;
+  background-position: 0 -314px;
+}
+
+.btn_mainMenu_1 {
+  width: 70px;
+  height: 70px;
+  background-position: 0 -237.33333px;
+}
+
+.btn_mainMenu_2 {
+  width: 70px;
+  height: 70px;
+  background-position: 0 -160.66667px;
+}
+
+.btn_mainMenu_3 {
+  width: 70px;
+  height: 70px;
+  background-position: 0 -84px;
+}
+
+.icon_menu {
+  width: 20px;
+  height: 17.33333px;
+  background-position: 0 0;
+}
+
+.line_foot {
+  width: 1.33333px;
+  height: 9.66667px;
+  background-position: -63.66667px -24px;
+}
+
+.logo_lh {
+  width: 57px;
+  height: 53.33333px;
+  background-position: 0 -24px;
+}
+
+/*# sourceMappingURL=sprite.css.map */

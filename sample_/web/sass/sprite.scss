@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+// sprite image 만들기
+
+@import "compass/utilities/sprites";
+
+$retina: true;
+
+$sprite-list:
+	sprite-map("sp/*.png", $layout: smart, $spacing: 20px)
+	sprite-map("icon/*.png", $layout: smart, $spacing: 20px);
+
+@each $map-name in $sprite-list{
+	$url: sprite-url($map-name);
+	$sprite-name: sprite-map-name($map-name);
+	$background-width: sprite-width($map-name);
+	$background-height: sprite-height($map-name);
+
+	.#{$sprite-name}{
+		display:inline-block;
+		background-image: $url;
+		background-repeat:no-repeat;
+		text-indent: -999px;
+		overflow: hidden;
+		display: inline-block;
+		line-height: 0;
+		white-space: nowrap;
+		@if $retina == false{
+			background-size:$background-width $background-height;
+		}@else if $retina == true{
+			background-size:$background-width/3 $background-height/3;
+		}
+	}
+
+	/* sprite-names: map(list)의 모든 스프라이트 목록의 네이밍을 반환  */
+	@each $image-name in sprite-names($map-name){
+		$width: sprite-width($map-name, $image-name);
+		$height: sprite-height($map-name, $image-name);
+		$position: sprite-position($map-name, $image-name);
+
+		.#{$image-name} {
+			@extend .#{$sprite-name};
+			@if $retina == false {
+				width: $width;
+				height: $height;
+				background-position: $position;
+			}@else if $retina == true{
+				width: $width/3;
+				height: $height/3;
+				background-position:nth($position, 1)/3 nth($position, 2)/3;
+			}
+		}
+	}
+}

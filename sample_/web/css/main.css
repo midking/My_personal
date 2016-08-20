@@ -1,0 +1,226 @@
+/* main */
+@media screen and (min-width: 320px) {
+  html {
+    font-size: 1em;
+  }
+
+  header h1 {
+    text-align: center;
+    font-size: 1.125rem;
+    border-top: 4px solid #07588a;
+  }
+  header h1 a {
+    display: inline-block;
+    padding: 0.9375rem 0 1.1875rem 0;
+    color: #07588a;
+    font-weight: 600;
+    line-height: 1.5rem;
+  }
+  header h1 a span {
+    color: #3bafda;
+  }
+
+  .mainSlider .bxslider li {
+    width: 100%;
+  }
+  .mainSlider .bxslider li img {
+    width: 100%;
+  }
+  .mainSlider .bx-default-pager {
+    text-align: center;
+  }
+  .mainSlider .bx-has-pager {
+    position: relative;
+    top: -1.625rem;
+  }
+  .mainSlider .bx-pager-item {
+    display: inline-block;
+  }
+  .mainSlider .bx-pager-item a {
+    background: rgba(255, 255, 255, 0.3);
+    text-indent: -9999px;
+    display: block;
+    width: 9px;
+    height: 9px;
+    margin: 0 0.15625rem;
+    outline: 0;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+  }
+  .mainSlider .bx-pager-item a:hover, .mainSlider .bx-pager-item a.active, .mainSlider .bx-pager-item a:focus {
+    background: rgba(255, 255, 255, 0.8);
+  }
+
+  .representMenu {
+    position: relative;
+    width: 100%;
+    height: 7.9375rem;
+    background-color: #f5f7fa;
+    top: -1.875rem;
+    font-size: 0px;
+    letter-spacing: 0px;
+    word-spacing: 0px;
+  }
+  .representMenu section {
+    margin: 0 0.83125rem;
+    /* 
+    			.menu01{background:url(../images/icon/btn_mainMenu_0.png) center center no-repeat;}
+    		.menu02{background:url(../images/icon/btn_mainMenu_1.png) center center no-repeat;}
+    		.menu03{background:url(../images/icon/btn_mainMenu_2.png) center center no-repeat;}
+    		.menu04{background:url(../images/icon/btn_mainMenu_3.png) center center no-repeat;} */
+  }
+  .representMenu section a {
+    display: inline-block;
+    width: 25%;
+    padding-top: 0.83125rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-align: center;
+    color: #434a54;
+  }
+
+  .mainInfo {
+    position: relative;
+    top: -1.875rem;
+    margin: 0px 1.625rem 20px 1.625rem;
+  }
+  .mainInfo dl {
+    position: relative;
+    padding-top: 1.375rem;
+  }
+  .mainInfo dl dt {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    color: #434a54;
+    text-align: center;
+    border-bottom: 2px solid #07588a;
+    padding: 0.375rem 0;
+  }
+  .mainInfo dl ul {
+    margin: 0.6875rem 0.5rem;
+  }
+  .mainInfo dl ul li {
+    display: inline-block;
+    width: 100%;
+  }
+  .mainInfo dl ul li a {
+    width: 75%;
+    color: #434a54;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    float: left;
+    font-size: 0.8125rem;
+    line-height: 1.6875rem;
+  }
+  .mainInfo dl ul li span {
+    font-size: 0.6875rem;
+    line-height: 1.6875rem;
+    color: #aab2bd;
+    float: right;
+  }
+  .mainInfo ._box {
+    margin: 0.6875rem 0.25rem;
+    padding: 0.5625rem 0.25rem 0.5625rem 0.4375rem;
+    border: 1px solid #aab2bd;
+    height: 7.25rem;
+  }
+  .mainInfo ._box section {
+    padding-bottom: 0.6875rem;
+  }
+  .mainInfo ._box section img {
+    float: left;
+    padding-right: 0.5375rem;
+  }
+  .mainInfo ._box section strong {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #434a54;
+  }
+  .mainInfo ._box section span {
+    font-size: 0.6875rem;
+    color: #aab2bd;
+  }
+  .mainInfo ._box p {
+    font-size: 0.8125rem;
+    line-height: 1.1875rem;
+    color: #434a54;
+    letter-spacing: -0.0625rem;
+  }
+  .mainInfo button.more {
+    display: block;
+    width: 100%;
+    height: 1.625rem;
+    font-size: 0.8125rem;
+    text-align: center;
+    color: #838b96;
+    background: #e6e9ed;
+    border: none;
+    margin-bottom: 0.75rem;
+  }
+
+  footer .pcVs {
+    display: block;
+    width: 100%;
+    padding: 0.6875rem 0;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+    background-color: #363b43;
+  }
+  footer section {
+    background-color: #434a54;
+    height: 5.625rem;
+    padding-top: 1.1875rem;
+  }
+  footer section .logo_lh {
+    margin: 0.0625rem 0.75rem 0 1.875rem;
+    float: left;
+  }
+  footer section .info {
+    width: 65%;
+    float: left;
+  }
+  footer section .info .f_menu {
+    line-height: 0;
+    padding-bottom: 0.75rem;
+  }
+  footer section .info .f_menu li {
+    display: inline-block;
+  }
+  footer section .info .f_menu a {
+    color: #fff;
+    font-size: 0.625rem;
+    font-weight: 600;
+  }
+  footer section .info address {
+    padding-bottom: 0.75rem;
+  }
+  footer section .info p {
+    font-size: 0.5rem;
+    color: #aab2bd;
+    line-height: 0.5625rem;
+    letter-spacing: -0.0625rem;
+    padding-bottom: 0.09375rem;
+  }
+}
+@media screen and (min-width: 375px) {
+  html {
+    font-size: 1.2em;
+  }
+}
+@media screen and (min-width: 450px) {
+  html {
+    font-size: 1.4em;
+  }
+}
+@media screen and (min-width: 600px) {
+  html {
+    font-size: 1.55em;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
