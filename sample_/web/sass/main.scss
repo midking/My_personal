@@ -1,27 +1,5 @@
 @charset "UTF-8";
 
-// .embed-container {position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto; } 
-// .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-
-/* main */
-// .h1, .h2, .h3{color:#212121;}
-
-// .h1{font-size:1.375rem;}
-// .h2{font-size:1.125rem;}
-// .h3{font-size:1.125rem;}
-// .h4{font-size:0.875rem;} 
-// .h1{
-// 	margin-bottom: 0.4375rem;
-//  }
-// .h2{
-// 	margin-top:1.5625rem;margin-bottom:0.1875rem;
-// }
-// .imgFull{
-// 	img{
-// 		width:100%;
-// 	}
-// }
-
 @media screen and (min-width: 320px) {
 	html{
 		font-size:1em;
@@ -80,13 +58,14 @@
 		}
 	}
 
-
 	.representMenu{
+		box-sizing:border-box; /* 추가 : A */
+		padding-top:20px; /* 추가 : A */
 		position:relative;
 		width: 100%;
 		height: 7.9375rem;	
 		background-color: #f5f7fa;
-		top: -1.875rem;
+		top: -1.625rem; /* 수정 */
 		font-size: 0px;
 		letter-spacing: 0px;
 		word-spacing: 0px;
@@ -95,17 +74,19 @@
 			a{
 				display: inline-block;
 				width: 25%;
-				padding-top: 0.83125rem;
+				padding-top: 4.83125rem; /* 수정 : A */
 				font-size: 0.9375rem;
 				font-weight:600;
 				text-align: center;
 				color:#434a54;
 			}
-/* 
-			.menu01{background:url(../images/icon/btn_mainMenu_0.png) center center no-repeat;}
-		.menu02{background:url(../images/icon/btn_mainMenu_1.png) center center no-repeat;}
-		.menu03{background:url(../images/icon/btn_mainMenu_2.png) center center no-repeat;}
-		.menu04{background:url(../images/icon/btn_mainMenu_3.png) center center no-repeat;} */
+
+			/* 추가 : A */
+			/* 모바일 기기의 사이즈에 따라 이미지의 사이즈도 늘어나야 하기 때문에 스프라이트 보다는 그냥 이미지를 쓰는게 좋아요 스프라이트는 고정 px 이니까요 */
+			.menu01{background:url(../images/main/btn_mainMenu_0.png) top center no-repeat;background-size:4.375rem 4.375rem;}
+			.menu02{background:url(../images/main/btn_mainMenu_1.png) top center no-repeat;background-size:4.375rem 4.375rem;}
+			.menu03{background:url(../images/main/btn_mainMenu_2.png) top center no-repeat;background-size:4.375rem 4.375rem;}
+			.menu04{background:url(../images/main/btn_mainMenu_3.png) top center no-repeat;background-size:4.375rem 4.375rem;}
 		}
 	}
 	.mainInfo{
@@ -155,11 +136,17 @@
 			margin:0.6875rem 0.25rem; 
 			padding: 0.5625rem 0.25rem 0.5625rem 0.4375rem;
 			border: 1px solid #aab2bd;
-			height: 7.25rem;
+			//height: 7.25rem;
+			//박스 안의 내용에 따라 박스 높이는 유동적이어야 해서 수정했어요
 			section{
 				padding-bottom:0.6875rem;
 				img{
 					float:left;
+					width:3.25rem; /* 추가 : B */
+					height:3.25rem; /* 추가 : B */
+					/* 해당 썸네일 이미지는 DB에 저장되어 있는 이미지를 불러오는 것 같아요
+					디자인 상의 사이즈나 비율과 달리 어떤 비율과 어떤 사이즈의 이미지가 올지 전혀 모르기 때문에
+					일단은 너비와 높이 둘다 추가했어요 - 너비만 있으면 높이가 auto */
 					padding-right:0.5375rem;
 				}
 				strong{
@@ -170,7 +157,6 @@
 				span{
 					font-size:0.6875rem;
 					color: #aab2bd;
-					
 				}
 			}
 			p{

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		a.on{color:red;}
+		dd{display:none;} /*일단 모든 dd를 안보이게*/
+	</style>
+</head>
+<body>
+	<dl>
+		<dt><a href="#none" class="on">제목</a></dt>
+		<dd>내용</dd>
+		<dt><a href="#none">제목</a></dt>
+		<dd>내용</dd>
+		<dt><a href="#none">제목</a></dt>
+		<dd>내용</dd>
+	</dl>
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+	<script>
+		$('dl dt a.on').parent().next().show(); /*초기셋팅된 .on의 내용 dd를 보이게*/
+
+		$('dl dt a').on('click', function(){ /*a를 클릭하면*/
+			var thisClass = $(this).attr('class'); /*현재 클릭한 a의 클래스 값을 저장*/
+			$('dl dt a').removeClass('on'); /*초기화 - on을 다 없애*/
+			$('dl dd').hide(); /*초기화 - dd를 전부다 접고*/
+			
+			if(thisClass != 'on'){ /* 만약 클릭한 a가 on이 아니면 */
+				$(this).addClass('on'); /*on 클래스를 추가하고*/
+				$(this).parent().next().show(); /*dd를 펼침*/
+			}
+		});
+	</script>
+</body>
+</html>
