@@ -20,7 +20,6 @@
 자가진단결과?  
 > 접근성 자동진단 툴의 자가진단 결과(95%이상 이미지 캡쳐)  
 > [KWAH4(카도와)](http://www.wah.or.kr/Participation/k-wah.asp)를 사용
-> http://accessibility.kr/nia/check.php
 
 3개의 준비물을 다 준비했다면  
 **[인증신청 하러가기](http://www.webwatch.co.kr/Req/WA_Req_File.html?MenuCD=130)**
