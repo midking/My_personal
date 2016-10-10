@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Date() 연습 문제</title>
+	<style>
+		body{
+			font-size:4em;
+			text-align:center;
+		}
+	</style>
+</head>
+<body>
+<script>
+function writeTime(){
+	// 코드 작성
+	var d = new Date();
+	var result = d.getFullYear()+'년 '+ d.getUTCMonth()+'월 '+ d.getDate()+'일 '+ d.getHours()+':'+ d.getMinutes()+':'+ d.getSeconds();
+	
+	// 화면에 출력
+	document.body.innerHTML = result;
+}
+// 1초단위로 갱신
+setInterval(writeTime, 1000);
+</script>
+</body>
+</html>
