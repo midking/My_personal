@@ -21,6 +21,12 @@ $sprite-list:
 		display:inline-block;
 		background-image: $url;
 		background-repeat:no-repeat;
+		text-indent:-9999px;
+		overflow: hidden;
+		display: inline-block;
+		line-height: 0;
+		white-space: nowrap;
+		text-align: left !important;
 		@if $retina == false{
 			background-size:$background-width $background-height;
 		}@else if $retina == true{
