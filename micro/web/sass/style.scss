@@ -40,6 +40,9 @@ body{
 }
 
 .topBox{
+	position:fixed;
+	top:0;
+	width:100%;
 	.inBox{
 		max-width:1280px;
 		margin:0 auto;
@@ -122,12 +125,17 @@ body{
 .mainInBox{
 	max-width:1280px;
 	margin:0 auto;
+	&:before{
+		content:'';
+		display:table;
+		width:100%;
+	}
 }
 
 .mainConBox{
 	width:960px;
 	margin:0 auto;
-	margin-top:455px;
+	margin-top:721px;
 	background-color:#fff;
 	padding:34px 29px 36px 35px;
 
