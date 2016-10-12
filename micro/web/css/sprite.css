@@ -1,87 +1,93 @@
 @charset "UTF-8";
-.icon, .icon_link_btn, .icon_main1, .icon_main1_point, .icon_main2, .icon_main2_point, .icon_main3, .icon_main3_point, .icon_main4, .icon_main4_point, .icon_main5, .icon_main5_point, .icon_main_more {
+.icon, .footer_logo, .icon_link_btn, .icon_main1, .icon_main1_point, .icon_main2, .icon_main2_point, .icon_main3, .icon_main3_point, .icon_main4, .icon_main4_point, .icon_main5, .icon_main5_point, .icon_main_more {
   display: inline-block;
-  background-image: url('../images/sprites/icon.png?9f7b6cb');
+  background-image: url('../images/sprites/icon.png?ccd8f76');
   background-repeat: no-repeat;
   text-indent: -9999px;
   overflow: hidden;
   line-height: 0;
   white-space: nowrap;
   text-align: left !important;
-  background-size: 154px 582px;
+  background-size: 220px 409px;
 }
 
 /* sprite-names: map(list)의 모든 스프라이트 목록의 네이밍을 반환  */
+.footer_logo {
+  width: 185px;
+  height: 67px;
+  background-position: 0 -101px;
+}
+
 .icon_link_btn {
   width: 10px;
   height: 16px;
-  background-position: 0 0;
+  background-position: 0 -227px;
 }
 
 .icon_main1 {
   width: 81px;
   height: 81px;
-  background-position: 0 -400px;
+  background-position: -139px -328px;
 }
 
 .icon_main1_point {
   width: 18px;
   height: 18px;
-  background-position: -30px 0;
+  background-position: 0 -328px;
 }
 
 .icon_main2 {
   width: 81px;
   height: 81px;
-  background-position: 0 -97px;
+  background-position: -101px 0;
 }
 
 .icon_main2_point {
   width: 9px;
   height: 38px;
-  background-position: -145px 0;
+  background-position: -30px -227px;
 }
 
 .icon_main3 {
   width: 81px;
   height: 81px;
-  background-position: 0 -501px;
+  background-position: -59px -227px;
 }
 
 .icon_main3_point {
   width: 61px;
   height: 19px;
-  background-position: 0 -58px;
+  background-position: -73px -188px;
 }
 
 .icon_main4 {
   width: 81px;
   height: 81px;
-  background-position: 0 -198px;
+  background-position: 0 0;
 }
 
 .icon_main4_point {
   width: 18px;
   height: 18px;
-  background-position: -68px 0;
+  background-position: -35px -188px;
 }
 
 .icon_main5 {
   width: 81px;
   height: 81px;
-  background-position: 0 -299px;
+  background-position: -38px -328px;
 }
 
 .icon_main5_point {
   width: 15px;
   height: 15px;
-  background-position: -81px -58px;
+  background-position: 0 -188px;
 }
 
 .icon_main_more {
   width: 19px;
   height: 19px;
-  background-position: -106px 0;
+  background-position: -154px -188px;
 }
 
 /*# sourceMappingURL=sprite.css.map */

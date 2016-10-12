@@ -4,6 +4,10 @@
   margin-bottom: 10px !important;
 }
 
+.pageMaxWidth, .topBox .inBox, .mainInBox, #footer .inBox {
+  max-width: 1280px;
+}
+
 *,
 *:before,
 *:after {
@@ -39,7 +43,7 @@ body {
 
 #wrap {
   width: 100%;
-  min-height: 2000px;
+  min-height: auto;
   position: relative;
   background: url("../images/main/img_main01_02.jpg") no-repeat center top;
   background-size: cover;
@@ -55,7 +59,6 @@ body {
   width: 100%;
 }
 .topBox .inBox {
-  max-width: 1280px;
   margin: 0 auto;
   padding-top: 45px;
 }
@@ -129,7 +132,6 @@ body {
 }
 
 .mainInBox {
-  max-width: 1280px;
   margin: 0 auto;
 }
 .mainInBox:before {
@@ -326,7 +328,51 @@ body {
 }
 
 #footer {
+  height: 89px;
+  margin-top: 53px;
   background: #010201;
+}
+#footer .inBox {
+  margin: 0 auto;
+  padding-top: 11px;
+}
+#footer .footerLogo {
+  float: left;
+}
+#footer .textBox {
+  float: left;
+  margin-left: 30px;
+}
+#footer .textBox .linkBox a {
+  color: #c9c9c9;
+}
+#footer .textBox .linkBox a:before, #footer .textBox .linkBox a:after,
+#footer .textBox .linkBox a span {
+  vertical-align: middle;
+}
+#footer .textBox .linkBox a:before, #footer .textBox .linkBox a:after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 13px;
+  background-color: #a4a5a4;
+  margin: 0 7px;
+}
+#footer .textBox .linkBox a:before {
+  margin-left: 0;
+}
+#footer .textBox .linkBox a:after {
+  margin-right: 0;
+}
+#footer .textBox address {
+  font-size: 14px;
+  line-height: 1.3;
+  margin-top: 8px;
+  color: #c9c9c9;
+}
+#footer .textBox address .spacing {
+  display: inline-block;
+  width: 15px;
 }
 
 /*# sourceMappingURL=style.css.map */
