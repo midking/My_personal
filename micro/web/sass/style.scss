@@ -44,6 +44,8 @@ body{
 }
 
 .topBox{
+	transition:all 0.5s ease-in;
+	font-family:"NanumSquare";
 	position:fixed;
 	top:0;
 	width:100%;
@@ -58,6 +60,7 @@ body{
 			float:left;
 			margin-left:22px;
 			a{
+				transition:all 0.5s ease-in;
 				display:inline-block;
 				padding:10px 15px;
 				font-size:20px;
@@ -68,6 +71,7 @@ body{
 	}
 
 	.mainIntroBox{
+		transition:all 0.5s ease-in;
 		float:left;
 		@keyframes mainText{
 			from{top:40px;opacity:0;}
@@ -81,6 +85,7 @@ body{
 			top:40px;
 		}
 		.blackBox{
+			transition:all 0.5s ease-in;
 			font-size:22px;
 			color:#fff;
 			background-color:#22252a;
@@ -89,16 +94,24 @@ body{
 			animation:mainText 0.8s ease-in forwards;
 		}
 		h1{
+			transition:all 0.5s ease-in;
+			display:inline-block;
 			font-size:72px;
 			color:#ed193a;
 			font-weight:bold;
 			margin:20px 0;
+			padding:5px 15px 5px 10px;
+			background-color:rgba(255,255,255,0.3);
 			animation:mainText 0.8s 0.2s ease-in forwards;
 		}
 		.date{
+			transition:all 0.5s ease-in;
+			display:inline-block;
 			font-size:48px;
 			color:#003964;
 			font-weight:bold;
+			padding:10px;
+			background-color:rgba(255,255,255,0.3);
 			animation:mainText 0.8s 0.4s ease-in forwards;
 		}
 	}
@@ -151,13 +164,13 @@ body{
 		content:'';
 		display:table;
 		width:100%;
+		padding-top:59%;
 	}
 }
 
 .mainConBox{
 	width:960px;
-	margin:0 auto;
-	margin-top:721px;
+	margin:0 auto; 
 	background-color:#fff;
 	padding:34px 29px 36px 35px;
 
@@ -386,6 +399,19 @@ body{
 				display:inline-block;
 				width:15px;
 			}
+		}
+	}
+}
+
+@media (min-width:800px) and (max-width:1024px){
+	address{
+		font-size:14px;
+		line-height:1.3;
+		margin-top:8px;
+		color:#f00;
+		.spacing{
+			display:inline-block;
+			width:15px;
 		}
 	}
 }
