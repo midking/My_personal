@@ -4,6 +4,7 @@
 
 .mb10{margin-bottom:10px !important;}
 .pageMaxWidth{
+	width:100%;
 	max-width:1280px;
 }
 *,
@@ -22,6 +23,10 @@ body{
 	font-family:'Nanum Gothic', serif;
 	font-size:14px;
 	line-height:1.2;
+	overflow:auto;
+	-webkit-overflow-scrolling: touch;
+	-moz-overflow-scrolling: touch;
+	overflow-scrolling: touch;
 }
 .imgBox{
 	img{
@@ -33,12 +38,9 @@ body{
 	width:100%;
 	min-height:auto;
 	position:relative;
-	background:url('../images/main/img_main01_02.jpg') no-repeat center top;
+	background:url('../images/main/img_mainbg.jpg') no-repeat center top;
 	background-size:cover;
 	background-attachment:fixed;
-	-webkit-transition:all 0.2s ease;
-	-moz-transition:all 0.2s ease;
-	transition:all 0.2s ease;
 }
 
 .topBox{
@@ -61,33 +63,47 @@ body{
 				font-size:20px;
 				font-weight:bold;
 				color:#010101;
-				transition:all 0.4s ease;
 			}
 		}
 	}
 
 	.mainIntroBox{
 		float:left;
+		@keyframes mainText{
+			from{top:40px;opacity:0;}
+			to{top:0;opacity:1;}
+		}
+		.blackBox,
+		h1,
+		.date{
+			opacity:0;
+			position:relative;
+			top:40px;
+		}
 		.blackBox{
 			font-size:22px;
 			color:#fff;
 			background-color:#22252a;
 			padding:6px 7px;
 			font-weight:bold;
+			animation:mainText 0.8s ease-in forwards;
 		}
 		h1{
 			font-size:72px;
 			color:#ed193a;
 			font-weight:bold;
 			margin:20px 0;
+			animation:mainText 0.8s 0.2s ease-in forwards;
 		}
 		.date{
 			font-size:48px;
 			color:#003964;
 			font-weight:bold;
+			animation:mainText 0.8s 0.4s ease-in forwards;
 		}
 	}
 	&.scrollTop{
+		transition:all 0.5s ease-in;
 		background-color:#fff;
 		height:120px;
 		.inBox{
@@ -96,12 +112,15 @@ body{
 		.mainGnb{
 			padding-top:45px;
 			a{
+				transition:all 0.5s ease-in;
 				font-weight:normal;
 			}
 		}
 		.mainIntroBox{
+			transition:all 0.5s ease-in;
 			padding-top:25px;
 			.blackBox{
+				transition:all 0.5s ease-in;
 				font-size:22px;
 				color:#565655;
 				background-color:transparent;
@@ -109,6 +128,7 @@ body{
 				font-weight:normal;
 			}
 			h1{
+				transition:all 0.5s ease-in;
 				font-size:36px;
 				color:#ed193a;
 				font-weight:bold;

@@ -5,9 +5,20 @@ $(document).ready(function(){
 			parallaxBg = $('.parallaxBg');
 		documentEl.on('scroll', function(){
 			var currScrollPos = documentEl.scrollTop();
-			parallaxBg.css('background-position', '0 ' + -currScrollPos/4 +'px');
+			parallaxBg.css('background-position', 'center ' + -currScrollPos/8 +'px');
 		});
 	})(jQuery);
+
+	$(window).smoothWheel();
+
+	$(window).scroll(function(){
+		var scrollTop = $(document).scrollTop();
+		if(scrollTop >= 200){
+			$('.topBox').addClass('scrollTop');
+		}else{
+			$('.topBox').removeClass('scrollTop');
+		}
+	});
 
 
 	/* 메인 백그라운드 마우스 오버시 move */
