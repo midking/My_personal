@@ -1,31 +1,60 @@
 $(document).ready(function(){
 
-	(function($){
-		var documentEl = $(document)
-			parallaxBg = $('.parallaxBg');
-		documentEl.on('scroll', function(){
-			var currScrollPos = documentEl.scrollTop();
-			parallaxBg.css('background-position', 'center ' + -currScrollPos/8 +'px');
-		});
-	})(jQuery);
-
 	$(window).smoothWheel();
 
-	$(window).scroll(function(){
-		var scrollTop = $(document).scrollTop();
-		if(scrollTop >= 200){
-			$('.topBox').addClass('scrollTop');
-		}else{
-			$('.topBox').removeClass('scrollTop');
+	if($('html').hasClass('desktop')){
+		var explode = function(){
+			console.log("asdf");
+			$("body").animate({scrollTop:373}, 1200);
 		}
-		console.log(scrollTop);
-	});
+		setTimeout(explode, 2000);
 
-	var explode = function(){
-		console.log("asdf");
-		$("body").animate({scrollTop:373}, 2500);
+		$(window).scroll(function(){
+			var scrollTop = $(document).scrollTop();
+			if(scrollTop >= 200){
+				$('.topBox').addClass('scrollTop');
+			}else{
+				$('.topBox').removeClass('scrollTop');
+			}
+			console.log(scrollTop);
+		});
+
+		(function($){
+			var documentEl = $(document)
+				parallaxBg = $('.parallaxBg');
+			documentEl.on('scroll', function(){
+				var currScrollPos = documentEl.scrollTop();
+				parallaxBg.css('background-position', 'center ' + -currScrollPos/8 +'px');
+			});
+		})(jQuery);
+	}else{
+		$(window).scroll(function(){
+			console.log($(document).scrollTop());
+		});
+
+		$(window).scroll(function(){
+			var scrollTop = $(document).scrollTop();
+			if(scrollTop >= 50){
+				$('.topBox').addClass('scrollTop');
+			}else{
+				$('.topBox').removeClass('scrollTop');
+			}
+			console.log(scrollTop);
+		});
+
+		$(".allMenuButton button").on('click', function(){
+			$(".topBox").toggleClass('on');
+		});
+
+		(function($){
+			var documentEl = $(document)
+				parallaxBg = $('.parallaxBg');
+			documentEl.on('scroll', function(){
+				var currScrollPos = documentEl.scrollTop();
+				parallaxBg.css('background-position', 'center ' + -currScrollPos/8 +'px');
+			});
+		})(jQuery);
 	}
-	setTimeout(explode, 2000);
 
 
 	/* 메인 백그라운드 마우스 오버시 move */

@@ -9,6 +9,13 @@
   max-width: 1280px;
 }
 
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+}
+
 *,
 *:before,
 *:after {
@@ -21,7 +28,7 @@ a {
   text-decoration: none;
 }
 
-.clearfix {
+.clearfix:after {
   content: '';
   display: table;
   width: 100%;
@@ -68,6 +75,9 @@ body {
 }
 .topBox .mainGnb {
   float: right;
+}
+.topBox .mainGnb .allMenuButton {
+  display: none;
 }
 .topBox .mainGnb li {
   float: left;
@@ -136,6 +146,9 @@ body {
   transition: all 0.5s ease-in;
   background-color: #fff;
   height: 120px;
+  -webkit-box-shadow: 0px 4px 9px -1px #717171;
+  -moz-box-shadow: 0px 4px 9px -1px #717171;
+  box-shadow: 0px 4px 9px -1px #717171;
 }
 .topBox.scrollTop .inBox {
   padding-top: 0px;
@@ -165,6 +178,7 @@ body {
   color: #ed193a;
   font-weight: bold;
   margin: 0;
+  padding-left: 0;
 }
 .topBox.scrollTop .mainIntroBox .date {
   display: none;
@@ -414,15 +428,517 @@ body {
   width: 15px;
 }
 
-@media (min-width: 800px) and (max-width: 1024px) {
-  address {
-    font-size: 14px;
-    line-height: 1.3;
-    margin-top: 8px;
-    color: #f00;
+/* ========================================== */
+@media (max-width: 800px) {
+  html {
+    font-size: 0.75em;
   }
-  address .spacing {
+
+  .mobileOff {
+    display: none;
+  }
+
+  body {
+    font-family: 'Nanum Gothic', serif;
+    font-size: 14px;
+    line-height: 1.2;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    -moz-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+  }
+
+  .imgBox img {
+    max-width: 100%;
+  }
+
+  #wrap {
+    width: 100%;
+    min-height: auto;
+    position: relative;
+    background: url("../images/main/img_mainbg.jpg") no-repeat center top;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  .topBox {
+    transition: all 0.5s ease-in;
+    font-family: "NanumSquare";
+    position: relative;
+    top: -40px;
+    width: 100%;
+  }
+  .topBox .inBox {
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 0;
+    text-align: center;
+  }
+  .topBox.on {
+    top: 0;
+  }
+  .topBox.on .mainGnb {
+    transition: top 0.8s ease-in;
+  }
+  .topBox.on .mainGnb button span {
+    transition: all 0.5s ease-in;
+    position: absolute;
+    top: 5px;
+  }
+  .topBox.on .mainGnb button span:first-child {
+    transform: rotateZ(45deg);
+  }
+  .topBox.on .mainGnb button span:first-child ~ span {
+    transform: rotateZ(-45deg);
+  }
+  .topBox .mainGnb {
+    transition: all 0.8s ease-in;
+    width: 100%;
+    height: 38px;
+    padding-top: 14px;
+    background-color: #fff;
+    padding: 5px 0;
+    float: none;
     display: inline-block;
+    text-align: left;
+  }
+  .topBox .mainGnb li {
+    float: left;
+    margin: 0 5px;
+  }
+  .topBox .mainGnb li a {
+    transition: all 0.5s ease-in;
+    display: block;
+    padding: 8px 3px;
+    font-size: 12px;
+    font-weight: normal;
+    color: #010101;
+  }
+  .topBox .mainGnb .allMenuButton {
+    position: fixed;
+    top: 8px;
+    right: 10px;
+    display: block;
+    z-index: 10;
+  }
+  .topBox .mainGnb .allMenuButton button {
+    position: relative;
+    width: 20px;
+    height: 20px;
+  }
+  .topBox .mainGnb .allMenuButton span {
+    transition: all 0.5s ease-in;
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #717171;
+    margin: 3px 0;
+  }
+  .topBox .mainIntroBox {
+    transition: all 0.5s ease-in;
+    width: 90%;
+    margin: 0 auto;
+    float: none;
+    padding-top: 11px;
+    text-align: left;
+  }
+  @keyframes mainText {
+    from {
+      top: 40px;
+      opacity: 0;
+    }
+    to {
+      top: 0;
+      opacity: 1;
+    }
+  }
+  .topBox .mainIntroBox .blackBox,
+  .topBox .mainIntroBox h1,
+  .topBox .mainIntroBox .date {
+    opacity: 0;
+    position: relative;
+    top: 40px;
+  }
+  .topBox .mainIntroBox .blackBox {
+    transition: all 0.5s ease-in;
+    display: inline-block;
+    font-size: 0.875rem;
+    color: #fff;
+    background-color: #22252a;
+    padding: 6px 10px;
+    font-weight: bold;
+    animation: mainText 0.8s ease-in forwards;
+  }
+  .topBox .mainIntroBox h1 {
+    transition: all 0.5s ease-in;
+    display: inline-block;
+    font-size: 2.875rem;
+    color: #ed193a;
+    font-weight: bold;
+    margin: 0;
+    padding: 0.3125rem 0.9375rem 0.3125rem 0.625rem;
+    background-color: rgba(255, 255, 255, 0.3);
+    animation: mainText 0.8s 0.2s ease-in forwards;
+  }
+  .topBox .mainIntroBox .date {
+    transition: all 0.5s ease-in;
+    display: inline-block;
+    font-size: 2rem;
+    color: #003964;
+    font-weight: bold;
+    padding: 0.625rem;
+    background-color: rgba(255, 255, 255, 0.3);
+    animation: mainText 0.8s 0.4s ease-in forwards;
+  }
+  .topBox.scrollTop {
+    transition: all 0.5s ease-in;
+    background-color: #fff;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: -45px;
+    z-index: 9;
+  }
+  .topBox.scrollTop.on {
+    top: 0;
+  }
+  .topBox.scrollTop .inBox {
+    padding-top: 0px;
+  }
+  .topBox.scrollTop .mainGnb {
+    padding: 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .topBox.scrollTop .mainGnb ul {
+    padding: 5px 0;
+  }
+  .topBox.scrollTop .mainGnb a {
+    transition: all 0.5s ease-in;
+    font-weight: normal;
+  }
+  .topBox.scrollTop .mainIntroBox {
+    transition: all 0.5s ease-in;
+    padding: 8px 0 5px 0;
+  }
+  .topBox.scrollTop .mainIntroBox .blackBox {
+    transition: all 0.5s ease-in;
+    font-size: 12px;
+    color: #565655;
+    background-color: transparent;
+    padding: 0;
+    font-weight: normal;
+  }
+  .topBox.scrollTop .mainIntroBox h1 {
+    transition: all 0.5s ease-in;
+    font-size: 20px;
+    color: #ed193a;
+    font-weight: bold;
+    margin: 0;
+  }
+  .topBox.scrollTop .mainIntroBox .date {
+    display: none;
+  }
+
+  .mainInBox {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .mainInBox:before {
+    content: '';
+    display: table;
+    width: 100%;
+    padding-top: 30%;
+  }
+
+  .mainConBox {
+    width: 90%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 15px;
+  }
+  .mainConBox .box01,
+  .mainConBox .box02,
+  .mainConBox .box03,
+  .mainConBox .box04 {
+    float: left;
+    border: 1px solid #d7d7d7;
+  }
+  .mainConBox .box01,
+  .mainConBox .box02 {
+    height: auto;
+  }
+  .mainConBox .box03,
+  .mainConBox .box04 {
+    height: auto;
+    margin-top: 0;
+  }
+  .mainConBox .box02,
+  .mainConBox .box04 {
+    margin-left: 0;
+  }
+  .mainConBox .box01 {
+    width: 100%;
+  }
+  .mainConBox .box01 .imgBox,
+  .mainConBox .box01 .textBox {
+    float: left;
+  }
+  .mainConBox .box01 .imgBox {
+    width: 100%;
+    height: auto;
+  }
+  .mainConBox .box01 .imgBox img {
+    width: 100%;
+  }
+  .mainConBox .box01 .textBox {
+    width: 100%;
+    height: auto;
+    padding: 10px 10px 13px;
+    border-left: none;
+  }
+  .mainConBox .box01 .textBox p {
+    font-size: 13px;
+    color: #000;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  .mainConBox .box01 .textBox .btn_link {
+    width: 48%;
+  }
+  .mainConBox .box02 {
+    position: relative;
+    width: 100%;
+    height: auto !important;
+    margin: 10px 0;
+    padding: 10px;
+  }
+  .mainConBox .box02 h4 {
+    font-size: 16px;
+    color: #000;
+    font-weight: bold;
+  }
+  .mainConBox .box02 .noti {
+    display: none;
+    border-top: 2px solid #003964;
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+  .mainConBox .box02 .noti a {
+    font-size: 15px;
+    line-height: 2;
+    color: #000;
+  }
+  .mainConBox .box02 .moreBtn {
+    display: block;
+    position: absolute;
+    top: 9px;
+    right: 17px;
+  }
+  .mainConBox .box03 {
+    width: 100%;
+  }
+  .mainConBox .box03 ul {
+    height: 100%;
+  }
+  .mainConBox .box03 li {
+    position: relative;
+    float: none;
+    width: 100%;
+    height: 100%;
+    background-color: #eeeeee;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    background-size: 40px;
+  }
+  .mainConBox .box03 li div {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .mainConBox .box03 li div i {
+    width: 100%;
+    height: auto;
+    vertical-align: top;
+  }
+  .mainConBox .box03 li:first-child + li, .mainConBox .box03 li:first-child + li + li + li {
+    background-color: #fff;
+  }
+  .mainConBox .box03 li:first-child {
+    background-image: url(../images/icon/icon_main1.png);
+  }
+  .mainConBox .box03 li:first-child div {
+    top: 18px;
+    left: 26px;
+  }
+  .mainConBox .box03 li:first-child div i {
+    background: url(../images/icon/icon_main1_point.png) no-repeat 0 0;
+    width: 10px;
+    height: 10px;
+    background-size: cover;
+  }
+  .mainConBox .box03 li:first-child + li {
+    background-image: url(../images/icon/icon_main2.png);
+  }
+  .mainConBox .box03 li:first-child + li div {
+    top: 26px;
+    left: 46px;
+  }
+  .mainConBox .box03 li:first-child + li div i {
+    background: url(../images/icon/icon_main2_point.png) no-repeat 0 0;
+    width: 5px;
+    height: 21px;
+    background-size: cover;
+  }
+  .mainConBox .box03 li:first-child + li + li {
+    background-image: url(../images/icon/icon_main3.png);
+  }
+  .mainConBox .box03 li:first-child + li + li div {
+    top: 10px;
+    left: 17px;
+  }
+  .mainConBox .box03 li:first-child + li + li div i {
+    background: url(../images/icon/icon_main3_point.png) no-repeat 0 0;
+    width: 35px;
+    height: 11px;
+    background-size: cover;
+  }
+  .mainConBox .box03 li:first-child + li + li + li {
+    background-image: url(../images/icon/icon_main4.png);
+  }
+  .mainConBox .box03 li:first-child + li + li + li div {
+    top: 28px;
+    left: 31px;
+  }
+  .mainConBox .box03 li:first-child + li + li + li div i {
+    background: url(../images/icon/icon_main4_point.png) no-repeat 0 0;
+    width: 11px;
+    height: 11px;
+    background-size: cover;
+  }
+  .mainConBox .box03 li:first-child + li + li + li + li {
+    background-image: url(../images/icon/icon_main5.png);
+  }
+  .mainConBox .box03 li:first-child + li + li + li + li div {
+    top: 28px;
+    left: 30px;
+  }
+  .mainConBox .box03 li:first-child + li + li + li + li div i {
+    background: url(../images/icon/icon_main5_point.png) no-repeat 0 0;
+    width: 10px;
+    height: 10px;
+    background-size: cover;
+  }
+  .mainConBox .box03 li a {
+    display: block;
+    font-size: 14px;
+    line-height: 1.25;
+    height: 100%;
+    padding: 20px 15px 20px 70px;
+    color: #000;
+    text-align: left;
+  }
+  .mainConBox .box03 li a:hover div {
+    animation: test 1s ease-in;
+  }
+  @keyframes test {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .mainConBox .box04 {
+    width: 100%;
+    margin-top: 10px;
+  }
+  .mainConBox .box04 img {
+    width: 100%;
+    display: block;
+  }
+
+  .btn_link {
+    position: relative;
+    font-size: 14px;
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid #d6d6d6;
+    color: #000;
+  }
+  .btn_link:after,
+  .btn_link span {
+    line-height: 18px;
+    vertical-align: middle;
+  }
+  .btn_link:after {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 16px;
+    position: absolute;
+    right: 8px;
+    background: url(../images/icon/icon_link_btn.png) no-repeat 0 0;
+  }
+
+  #footer {
+    height: auto;
+    margin-top: 53px;
+    background: #010201;
+  }
+  #footer .inBox {
+    width: 100%;
+    margin: 0 auto;
+    padding: 5px 0;
+  }
+  #footer .footerLogo {
+    float: left;
+    margin-top: 10px;
+    width: 30%;
+  }
+  #footer .footerLogo i {
+    width: 110px;
+    height: 35px;
+    background: url(../images/icon/footer_logo.png) no-repeat 0 0;
+    background-size: cover;
+  }
+  #footer .textBox {
+    float: left;
+    width: 70%;
+    margin-left: 0;
+    font-size: 10px;
+  }
+  #footer .textBox .linkBox a {
+    color: #c9c9c9;
+  }
+  #footer .textBox .linkBox a:before, #footer .textBox .linkBox a:after,
+  #footer .textBox .linkBox a span {
+    vertical-align: middle;
+  }
+  #footer .textBox .linkBox a:before, #footer .textBox .linkBox a:after {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 10px;
+    background-color: #a4a5a4;
+    margin: 0 7px;
+  }
+  #footer .textBox .linkBox a:before {
+    margin-left: 0;
+  }
+  #footer .textBox .linkBox a:after {
+    margin-right: 0;
+  }
+  #footer .textBox address {
+    font-size: 9px;
+    line-height: 1.3;
+    margin-top: 3px;
+    color: #c9c9c9;
+  }
+  #footer .textBox address .spacing {
+    display: block;
     width: 15px;
   }
 }
