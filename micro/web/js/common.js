@@ -3,12 +3,6 @@ $(document).ready(function(){
 	$(window).smoothWheel();
 
 	if($('html').hasClass('desktop')){
-		var explode = function(){
-			console.log("asdf");
-			$("body").animate({scrollTop:373}, 1200);
-		}
-		setTimeout(explode, 2000);
-
 		$(window).scroll(function(){
 			var scrollTop = $(document).scrollTop();
 			if(scrollTop >= 200){
@@ -16,7 +10,6 @@ $(document).ready(function(){
 			}else{
 				$('.topBox').removeClass('scrollTop');
 			}
-			console.log(scrollTop);
 		});
 
 		(function($){
@@ -27,6 +20,11 @@ $(document).ready(function(){
 				parallaxBg.css('background-position', 'center ' + -currScrollPos/8 +'px');
 			});
 		})(jQuery);
+
+		var explode = function(){
+			$("body, html").animate({scrollTop:373}, 1200);
+		}
+		setTimeout(explode, 2000);
 	}else{
 		$(window).scroll(function(){
 			console.log($(document).scrollTop());
@@ -44,6 +42,7 @@ $(document).ready(function(){
 
 		$(".allMenuButton button").on('click', function(){
 			$(".topBox").toggleClass('on');
+			console.log("asdf");
 		});
 
 		(function($){

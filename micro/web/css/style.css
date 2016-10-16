@@ -135,7 +135,9 @@ body {
 .topBox .mainIntroBox .date {
   transition: all 0.5s ease-in;
   display: inline-block;
+  opacity: 1;
   font-size: 48px;
+  top: 0;
   color: #003964;
   font-weight: bold;
   padding: 10px;
@@ -584,6 +586,7 @@ body {
     transition: all 0.5s ease-in;
     display: inline-block;
     font-size: 2rem;
+    opacity: 1;
     color: #003964;
     font-weight: bold;
     padding: 0.625rem;

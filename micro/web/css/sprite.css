@@ -1,7 +1,7 @@
 @charset "UTF-8";
 .icon, .footer_logo, .icon_link_btn, .icon_main1, .icon_main1_point, .icon_main2, .icon_main2_point, .icon_main3, .icon_main3_point, .icon_main4, .icon_main4_point, .icon_main5, .icon_main5_point, .icon_main_more {
   display: inline-block;
-  background-image: url('../images/sprites/icon.png?ccd8f76');
+  background-image: url('../images/sprites/icon.png?dbb7604');
   background-repeat: no-repeat;
   text-indent: -9999px;
   overflow: hidden;
