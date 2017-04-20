@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8" />
+	<title>^^</title>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			var i = 0;
+			function count(){
+				if(i != 70){
+					$(".num").text(i++);
+				}else{
+					$(".num").addClass("active");
+					console.log("asdasdfsdf");
+					return false;
+				}
+				setTimeout(count, 100);
+			}
+			setTimeout(count, 100);
+		});
+	</script>
+	<style>
+		.num{font-size:60px;text-align:center;transition-duration: 5s;}
+		.active{font-size:200px;color:#fff;}
+	</style>
+</head>
+<body>
+	<div class="num">0</div>
+</body>
+</html>
