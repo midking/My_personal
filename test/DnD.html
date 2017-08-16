@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>DragNDrop</title>
+  <script type="text/javascript" src="/js/jquery-1.11.3.min.js"></script>
+  <script src="/js/jquery-ui1.10.4.js"></script>
+  <script type="text/javascript" src="/js/jquery.tablednd.0.8.min.js"></script>
+
+  <link type="text/css" rel="stylesheet" href="/css/reset.css">
+  <link type="text/css" rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/jquery-ui1.8.18.css">
+  <style>
+    body {font-family: arial, sans-serif;font-size: 14px;}
+    #tblData{font-family: arial, sans-serif;border-collapse: collapse; width: 100%; }
+    #tblData td,
+    #tblData th {border: 1px solid #dddddd; text-align: left; padding: 8px; }
+    #tblData th {background-color: #dddddd; }
+    #tblData .even {background-color: #ecf6fc; }
+    #tblData .odd {background-color: #ddeedd; }
+    #tblData .myDragClass {background-color: yellow; font-size: 14px; }
+    #tblData .myDragClass td{font-weight:bold; }
+    #tblData .nodrag {background-color: lightblue; }
+
+    #sortable { list-style-type: none; margin:40px auto; padding: 0; width: 60%; }
+    #sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
+    #sortable li span { position: absolute; margin-left: -1.3em; }
+  </style>
+</head>
+<body>
+  <div id="header">
+    <div class="wrap">
+      <h1 class="logo"><a href="#"><img src="../../Images/common/logo.png" alt="로고" width="76" height="47"></a></h1>
+    </div>
+  </div>
+  <div id="section" class="main">
+    <div class="page_info">
+      <div class="wrap">
+        <h2>DragNDrop</h2>
+      </div>
+    </div>
+    <div _ngcontent-mby-23="" class="device_table customer">
+    <div id="dtEventList_wrapper" class="dataTables_wrapper no-footer" style="width:50%;margin:20px auto;border:1px solid #717171;padding:10px;">
+      <div id="dtEventList_filter" class="dataTables_filter">
+        <label>Search:<input type="search" class="" placeholder="" aria-controls="dtEventList"></label>
+      </div>
+      <table _ngcontent-mby-23="" cellspacing="0" class="display dataTable no-footer" id="table" width="100%" role="grid" aria-describedby="dtEventList_info" style="width: 100%;">
+        <thead _ngcontent-mby-23="">
+          <tr _ngcontent-mby-23="" role="row">
+            <th _ngcontent-mby-23="" class="sorting_asc" tabindex="0" aria-controls="dtEventList" rowspan="1" colspan="1" aria-label="#: activate to sort column descending" aria-sort="ascending" style="width: 91px;">#</th>
+            <th _ngcontent-mby-23="" class="sorting" tabindex="0" aria-controls="dtEventList" rowspan="1" colspan="1" aria-label="제목: activate to sort column ascending" style="width: 138px;">제목</th>
+            <th _ngcontent-mby-23="" class="sorting" tabindex="0" aria-controls="dtEventList" rowspan="1" colspan="1" aria-label="이용기간: activate to sort column ascending" style="width: 205px;">이용기간</th>
+            <th _ngcontent-mby-23="" class="sorting" tabindex="0" aria-controls="dtEventList" rowspan="1" colspan="1" aria-label="이벤트 이미지: activate to sort column ascending" style="width: 279px;">이벤트 이미지</th>
+            <th _ngcontent-mby-23="" class="sorting" tabindex="0" aria-controls="dtEventList" rowspan="1" colspan="1" aria-label=": activate to sort column ascending" style="width: 69px;"></th>
+          </tr>
+        </thead>
+        <tbody _ngcontent-mby-23="">
+          <tr role="row" class="odd" id="1">
+            <td class="sorting_1">1</td>
+            <td>sdfadsfd</td>
+            <td>04/14/2017 - 04/20/2017</td>
+            <td>-</td>
+            <td><div class="step_btn_box11"><input title="Disable Service" type="submit" value="x"></div></td>
+          </tr>
+          <tr role="row" class="odd" id="2">
+            <td class="sorting_1">2</td>
+            <td>sdfadsfd</td>
+            <td>04/14/2017 - 04/20/2017</td>
+            <td>-</td>
+            <td><div class="step_btn_box11"><input title="Disable Service" type="submit" value="x"></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <table id="tblData">
+    <tr class="nodrop nodrag">
+      <th>Name</th>
+      <th>Age</th>
+      <th>Country</th>
+    </tr>
+    <tr>
+      <td>Maria Anders</td>
+      <td>30</td>
+      <td>Germany</td>
+    </tr>
+    <tr>
+      <td>Francisco Chang</td>
+      <td>24</td>
+      <td>Mexico</td>
+    </tr>
+    <tr>
+      <td>Roland Mendel</td>
+      <td>100</td>
+      <td>Austria</td>
+    </tr>
+    <tr>
+      <td>Helen Bennett</td>
+      <td>28</td>
+      <td>UK</td>
+    </tr>
+    <tr>
+      <td>Yoshi Tannamuri</td>
+      <td>35</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <td>Giovanni Rovelli</td>
+      <td>46</td>
+      <td>Italy</td>
+    </tr>
+    <tr>
+      <td>Narendra Sharma</td>
+      <td>56</td>
+      <td>India</td>
+    </tr>
+    <tr>
+      <td>Alex Smith</td>
+      <td>59</td>
+      <td>USA</td>
+    </tr>
+  </table>
+
+  <ul id="sortable">
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
+  </ul>
+
+  <script>
+    $(document).ready(function() {
+      var iCnt = 1;
+      $("#tblData tr").each(function() {
+         var id = "tr" + parseInt(iCnt);
+         $(this).attr("id", id);
+         iCnt++;
+      });
+      $("#tblData").find("tr:even").addClass("even");
+      $("#tblData").find("tr:odd").addClass("odd");
+      $("#tblData").tableDnD({
+        onDragClass: "myDragClass",
+        onDrop: function(table, row) {
+          $("#tblData").find("tr").removeClass("even odd");
+          $("#tblData").find("tr:even").addClass("even");
+          $("#tblData").find("tr:odd").addClass("odd");
+        }
+      });
+
+
+      $( function() {
+        $( "#sortable" ).sortable();
+        $( "#sortable" ).disableSelection();
+      });
+    });
+  </script>
+</body>
+</html>
