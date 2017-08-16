@@ -24,7 +24,7 @@
 		#header {height: 47px;background: #25909a}
 		#header .wrap {width: 1024px;margin: 0 auto;position: relative}
 		#header .wrap:after {display: block;content: '';clear: both}
-		#header .logo {float: left;margin: 0 35px 0 0;width: 76px;height: 47px}
+		#header .logo {margin: 0 35px 0 0;width: 76px;height: 47px}
 		#header .gnb_bg {position: fixed;width: 100%;top: 47px;left: 0;width: 100%;height: 47px;background: #adadad;z-index: 90;overflow: hidden;max-height: 0;opacity: 0;transition: max-height .4s,opacity .4s}
 		#header .top_sub {float: right;font-size: 0;height: 47px;}
 		#header .top_sub .top_icon01 {width: 23px;height: 18px;background: url(../../Images/common/top_icon7.png);display: inline-block;margin: 14.5px 20px 0 0;cursor: pointer}
@@ -32,7 +32,7 @@
 
 		.page_info {background: #eee;height: 55px;line-height: 55px}
 		.page_info .wrap {width: 1024px;margin: 0 auto}
-		.page_info h2 {font-size: 15px;color: #303030;float: left;font-weight: 500;position: relative;margin: 0 0 0 10px}
+		.page_info h2 {font-size: 15px;color: #303030;font-weight: 500;position: relative;margin: 0 0 0 10px}
 
 		#section {padding: 0 0 100px; min-height:738px;}
 
@@ -60,6 +60,12 @@
 		#sortable { list-style-type: none; margin:40px auto; padding: 0;}
 		#sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
 		#sortable li span { position: absolute; margin-left: -1.3em; }
+		@media screen and (max-width: 767px){
+			#header .wrap{width:100%;}
+			#header .logo {text-align:center;margin: 0 35px 0 0;width: 100%;height: 47px}
+			body {font-family: arial, sans-serif;font-size: 1em;width:100%;}
+			.device_table{padding:0;}
+		}
 	</style>
 </head>
 <body>
@@ -128,11 +134,11 @@
 				<table _ngcontent-mby-23="" cellspacing="0" class="display dataTable no-footer" id="table" width="100%" role="grid" aria-describedby="dtEventList_info" style="width: 100%;">
 					<thead _ngcontent-mby-23="">
 						<tr _ngcontent-mby-23="" role="row">
-							<th _ngcontent-mby-23="" class="sorting_asc" tabindex="0" aria-controls="dtEventList" rowspan="1" colspan="1" aria-label="#: activate to sort column descending" aria-sort="ascending" style="width: 91px;">#</th>
-							<th _ngcontent-mby-23="" class="sorting" tabindex="0" aria-controls="dtEventList" rowspan="1" colspan="1" aria-label="제목: activate to sort column ascending" style="width: 138px;">제목</th>
-							<th _ngcontent-mby-23="" class="sorting" tabindex="0" aria-controls="dtEventList" rowspan="1" colspan="1" aria-label="이용기간: activate to sort column ascending" style="width: 205px;">이용기간</th>
-							<th _ngcontent-mby-23="" class="sorting" tabindex="0" aria-controls="dtEventList" rowspan="1" colspan="1" aria-label="이벤트 이미지: activate to sort column ascending" style="width: 279px;">이벤트 이미지</th>
-							<th _ngcontent-mby-23="" class="sorting" tabindex="0" aria-controls="dtEventList" rowspan="1" colspan="1" aria-label=": activate to sort column ascending" style="width: 69px;"></th>
+							<th _ngcontent-mby-23="" class="sorting_asc" tabindex="0" aria-controls="dtEventList" rowspan="1" colspan="1" aria-label="#: activate to sort column descending" aria-sort="ascending" >#</th>
+							<th _ngcontent-mby-23="" class="sorting" tabindex="0" aria-controls="dtEventList" rowspan="1" colspan="1" aria-label="제목: activate to sort column ascending" >제목</th>
+							<th _ngcontent-mby-23="" class="sorting" tabindex="0" aria-controls="dtEventList" rowspan="1" colspan="1" aria-label="이용기간: activate to sort column ascending" >이용기간</th>
+							<th _ngcontent-mby-23="" class="sorting" tabindex="0" aria-controls="dtEventList" rowspan="1" colspan="1" aria-label="이벤트 이미지: activate to sort column ascending" >이벤트 이미지</th>
+							<th _ngcontent-mby-23="" class="sorting" tabindex="0" aria-controls="dtEventList" rowspan="1" colspan="1" aria-label=": activate to sort column ascending" ></th>
 						</tr>
 					</thead>
 					<tbody _ngcontent-mby-23="">
