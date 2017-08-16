@@ -1,162 +1,209 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>DragNDrop</title>
-  <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
-  <script src="js/jquery-ui1.10.4.js"></script>
-  <script type="text/javascript" src="js/jquery.tablednd.js"></script>
+	<meta charset="UTF-8">
+	<title>Drag and Drop</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.tablednd/0.8/jquery.tablednd.0.8.min.js"></script>
 
-  <link type="text/css" rel="stylesheet" href="css/reset.css">
-  <link type="text/css" rel="stylesheet" href="css/common.css">
-  <link rel="stylesheet" href="css/jquery-ui1.8.18.css">
-  <style>
-    body {font-family: arial, sans-serif;font-size: 14px;}
-    #tblData{font-family: arial, sans-serif;border-collapse: collapse; width: 100%; }
-    #tblData td,
-    #tblData th {border: 1px solid #dddddd; text-align: left; padding: 8px; }
-    #tblData th {background-color: #dddddd; }
-    #tblData .even {background-color: #ecf6fc; }
-    #tblData .odd {background-color: #ddeedd; }
-    #tblData .myDragClass {background-color: yellow; font-size: 14px; }
-    #tblData .myDragClass td{font-weight:bold; }
-    #tblData .nodrag {background-color: lightblue; }
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
+	<style>
+	/* http://meyerweb.com/eric/tools/css/reset/ 
+		 v2.0 | 20110126
+		 License: none (public domain)
+	*/
 
-    #sortable { list-style-type: none; margin:40px auto; padding: 0; width: 60%; }
-    #sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
-    #sortable li span { position: absolute; margin-left: -1.3em; }
-  </style>
+		html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; } /* HTML5 display-role reset for older browsers */ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; } body { line-height: 1; } ol, ul { list-style: none; } blockquote, q { quotes: none; } blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; } table { border-collapse: collapse; border-spacing: 0; } a{text-decoration: none}
+
+		@import url( "http://fonts.googleapis.com/earlyaccess/notosanskr.css" );
+		body {font-family: "Noto Sans KR", sans-serif;letter-spacing: -0.025em; overflow-y:scroll;}
+		#header {height: 47px;background: #25909a}
+		#header .wrap {width: 1024px;margin: 0 auto;position: relative}
+		#header .wrap:after {display: block;content: '';clear: both}
+		#header .logo {float: left;margin: 0 35px 0 0;width: 76px;height: 47px}
+		#header .gnb_bg {position: fixed;width: 100%;top: 47px;left: 0;width: 100%;height: 47px;background: #adadad;z-index: 90;overflow: hidden;max-height: 0;opacity: 0;transition: max-height .4s,opacity .4s}
+		#header .top_sub {float: right;font-size: 0;height: 47px;}
+		#header .top_sub .top_icon01 {width: 23px;height: 18px;background: url(../../Images/common/top_icon7.png);display: inline-block;margin: 14.5px 20px 0 0;cursor: pointer}
+		#header .top_sub .top_icon02 {width: 20px;height: 20px;background: url(../../Images/common/top_icon8.png);display: inline-block;margin: 13.5px 0 0;cursor: pointer}
+
+		.page_info {background: #eee;height: 55px;line-height: 55px}
+		.page_info .wrap {width: 1024px;margin: 0 auto}
+		.page_info h2 {font-size: 15px;color: #303030;float: left;font-weight: 500;position: relative;margin: 0 0 0 10px}
+
+		#section {padding: 0 0 100px; min-height:738px;}
+
+		.device_table {background: #fff;padding: 0 30px 40px}
+		.device_table table {width: 100%;text-align: center;}
+		.device_table table th {height: 45px;vertical-align: middle;color: #676a6c;font-size: 13px;border-bottom:1px solid #e7eaec}
+		.device_table table td {height: 34px;vertical-align: middle;color: #7f7f82;font-size: 13px;border-bottom:1px solid #e7eaec}
+		.device_table table td.svc_container {font-size: 0;width: 180px}
+		.device_table table td .svc_con {width: 26px;height: 26px;display: inline-block;margin: 0 4px}
+		.device_table table td.x_btn {width: 50px;padding: 0 15px 0 0;text-align: right}
+		.device_table table td.x_btn img {cursor: pointer;padding: 5px}
+
+		body {font-family: arial, sans-serif;font-size: 14px;}
+		#tblData{font-family: arial, sans-serif;border-collapse: collapse; width: 100%; margin:40px 0;}
+		#tblData td,
+		#tblData th {border: 1px solid #dddddd; text-align: left; padding: 8px; }
+		#tblData th {background-color: #dddddd; }
+		#tblData .even {background-color: #ecf6fc; }
+		#tblData .odd {background-color: #ddeedd; }
+		#tblData .myDragClass {background-color:#D5C0EF; font-size: 14px; }
+		#tblData .nodrag {background-color: lightblue; }
+
+		#table .myDragClass {background-color:#D5C0EF; font-size: 14px; }
+
+		#sortable { list-style-type: none; margin:40px auto; padding: 0;}
+		#sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
+		#sortable li span { position: absolute; margin-left: -1.3em; }
+	</style>
 </head>
 <body>
-  <div id="header">
-    <div class="wrap">
-      <h1 class="logo"><a href="#"><img src="../../Images/common/logo.png" alt="로고" width="76" height="47"></a></h1>
-    </div>
-  </div>
-  <div id="section" class="main">
-    <div class="page_info">
-      <div class="wrap">
-        <h2>DragNDrop</h2>
-      </div>
-    </div>
-    <div _ngcontent-mby-23="" class="device_table customer">
-    <div id="dtEventList_wrapper" class="dataTables_wrapper no-footer">
-      <div id="dtEventList_filter" class="dataTables_filter">
-        <label>Search:<input type="search" class="" placeholder="" aria-controls="dtEventList"></label>
-      </div>
-      <table _ngcontent-mby-23="" cellspacing="0" class="display dataTable no-footer" id="table" width="100%" role="grid" aria-describedby="dtEventList_info" style="width: 100%;">
-        <thead _ngcontent-mby-23="">
-          <tr _ngcontent-mby-23="" role="row">
-            <th _ngcontent-mby-23="" class="sorting_asc" tabindex="0" aria-controls="dtEventList" rowspan="1" colspan="1" aria-label="#: activate to sort column descending" aria-sort="ascending" style="width: 91px;">#</th>
-            <th _ngcontent-mby-23="" class="sorting" tabindex="0" aria-controls="dtEventList" rowspan="1" colspan="1" aria-label="제목: activate to sort column ascending" style="width: 138px;">제목</th>
-            <th _ngcontent-mby-23="" class="sorting" tabindex="0" aria-controls="dtEventList" rowspan="1" colspan="1" aria-label="이용기간: activate to sort column ascending" style="width: 205px;">이용기간</th>
-            <th _ngcontent-mby-23="" class="sorting" tabindex="0" aria-controls="dtEventList" rowspan="1" colspan="1" aria-label="이벤트 이미지: activate to sort column ascending" style="width: 279px;">이벤트 이미지</th>
-            <th _ngcontent-mby-23="" class="sorting" tabindex="0" aria-controls="dtEventList" rowspan="1" colspan="1" aria-label=": activate to sort column ascending" style="width: 69px;"></th>
-          </tr>
-        </thead>
-        <tbody _ngcontent-mby-23="">
-          <tr role="row" class="odd" id="1">
-            <td class="sorting_1">1</td>
-            <td>sdfadsfd</td>
-            <td>04/14/2017 - 04/20/2017</td>
-            <td>-</td>
-            <td><div class="step_btn_box11"><input title="Disable Service" type="submit" value="x"></div></td>
-          </tr>
-          <tr role="row" class="odd" id="2">
-            <td class="sorting_1">2</td>
-            <td>sdfadsfd</td>
-            <td>04/14/2017 - 04/20/2017</td>
-            <td>-</td>
-            <td><div class="step_btn_box11"><input title="Disable Service" type="submit" value="x"></div></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+	<div id="header">
+		<div class="wrap">
+			<h1 class="logo">Ding4U</h1>
+		</div>
+	</div>
+	<div id="section" class="main">
+		<div class="page_info">
+			<div class="wrap">
+				<h2>Drag and Drop</h2>
+			</div>
+		</div>
 
-  <table id="tblData">
-    <tr class="nodrop nodrag">
-      <th>Name</th>
-      <th>Age</th>
-      <th>Country</th>
-    </tr>
-    <tr>
-      <td>Maria Anders</td>
-      <td>30</td>
-      <td>Germany</td>
-    </tr>
-    <tr>
-      <td>Francisco Chang</td>
-      <td>24</td>
-      <td>Mexico</td>
-    </tr>
-    <tr>
-      <td>Roland Mendel</td>
-      <td>100</td>
-      <td>Austria</td>
-    </tr>
-    <tr>
-      <td>Helen Bennett</td>
-      <td>28</td>
-      <td>UK</td>
-    </tr>
-    <tr>
-      <td>Yoshi Tannamuri</td>
-      <td>35</td>
-      <td>Canada</td>
-    </tr>
-    <tr>
-      <td>Giovanni Rovelli</td>
-      <td>46</td>
-      <td>Italy</td>
-    </tr>
-    <tr>
-      <td>Narendra Sharma</td>
-      <td>56</td>
-      <td>India</td>
-    </tr>
-    <tr>
-      <td>Alex Smith</td>
-      <td>59</td>
-      <td>USA</td>
-    </tr>
-  </table>
+		<table id="tblData">
+			<tr class="nodrop nodrag">
+				<th>Name</th>
+				<th>Age</th>
+				<th>Country</th>
+			</tr>
+			<tr>
+				<td>Maria Anders</td>
+				<td>30</td>
+				<td>Germany</td>
+			</tr>
+			<tr>
+				<td>Francisco Chang</td>
+				<td>24</td>
+				<td>Mexico</td>
+			</tr>
+			<tr>
+				<td>Roland Mendel</td>
+				<td>100</td>
+				<td>Austria</td>
+			</tr>
+			<tr>
+				<td>Helen Bennett</td>
+				<td>28</td>
+				<td>UK</td>
+			</tr>
+			<tr>
+				<td>Yoshi Tannamuri</td>
+				<td>35</td>
+				<td>Canada</td>
+			</tr>
+			<tr>
+				<td>Giovanni Rovelli</td>
+				<td>46</td>
+				<td>Italy</td>
+			</tr>
+			<tr>
+				<td>Narendra Sharma</td>
+				<td>56</td>
+				<td>India</td>
+			</tr>
+			<tr>
+				<td>Alex Smith</td>
+				<td>59</td>
+				<td>USA</td>
+			</tr>
+		</table>
 
-  <ul id="sortable">
-    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
-    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
-    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
-    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
-    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
-    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
-    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
-  </ul>
+		<div _ngcontent-mby-23="" class="device_table customer">
+			<div id="dtEventList_wrapper" class="dataTables_wrapper no-footer">
+				<table _ngcontent-mby-23="" cellspacing="0" class="display dataTable no-footer" id="table" width="100%" role="grid" aria-describedby="dtEventList_info" style="width: 100%;">
+					<thead _ngcontent-mby-23="">
+						<tr _ngcontent-mby-23="" role="row">
+							<th _ngcontent-mby-23="" class="sorting_asc" tabindex="0" aria-controls="dtEventList" rowspan="1" colspan="1" aria-label="#: activate to sort column descending" aria-sort="ascending" style="width: 91px;">#</th>
+							<th _ngcontent-mby-23="" class="sorting" tabindex="0" aria-controls="dtEventList" rowspan="1" colspan="1" aria-label="제목: activate to sort column ascending" style="width: 138px;">제목</th>
+							<th _ngcontent-mby-23="" class="sorting" tabindex="0" aria-controls="dtEventList" rowspan="1" colspan="1" aria-label="이용기간: activate to sort column ascending" style="width: 205px;">이용기간</th>
+							<th _ngcontent-mby-23="" class="sorting" tabindex="0" aria-controls="dtEventList" rowspan="1" colspan="1" aria-label="이벤트 이미지: activate to sort column ascending" style="width: 279px;">이벤트 이미지</th>
+							<th _ngcontent-mby-23="" class="sorting" tabindex="0" aria-controls="dtEventList" rowspan="1" colspan="1" aria-label=": activate to sort column ascending" style="width: 69px;"></th>
+						</tr>
+					</thead>
+					<tbody _ngcontent-mby-23="">
+						<tr role="row" class="" id="1">
+							<td class="sorting_1">1</td>
+							<td>로렘 입숨 내가 너의 이름</td>
+							<td>05/07/2017 - 05/28/2017</td>
+							<td>-</td>
+							<td><div class="step_btn_box11"><input title="Disable Service" type="submit" value="x"></div></td>
+						</tr>
+						<tr role="row" class="" id="2">
+							<td class="sorting_1">2</td>
+							<td>로렘 테스트 안녕 너의</td>
+							<td>04/14/2017 - 04/20/2017</td>
+							<td>-</td>
+							<td><div class="step_btn_box11"><input title="Disable Service" type="submit" value="x"></div></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
 
-  <script>
-    $(document).ready(function() {
-      var iCnt = 1;
-      $("#tblData tr").each(function() {
-         var id = "tr" + parseInt(iCnt);
-         $(this).attr("id", id);
-         iCnt++;
-      });
-      $("#tblData").find("tr:even").addClass("even");
-      $("#tblData").find("tr:odd").addClass("odd");
-      $("#tblData").tableDnD({
-        onDragClass: "myDragClass",
-        onDrop: function(table, row) {
-          $("#tblData").find("tr").removeClass("even odd");
-          $("#tblData").find("tr:even").addClass("even");
-          $("#tblData").find("tr:odd").addClass("odd");
-        }
-      });
+		<ul id="sortable">
+			<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
+			<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
+			<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
+			<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
+			<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
+			<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
+			<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
+		</ul>
 
+	<script>
+		$(document).ready(function() {
+			var iCnt = 1;
+			$("#tblData tr").each(function() {
+				 var id = "tr" + parseInt(iCnt);
+				 $(this).attr("id", id);
+				 iCnt++;
+			});
+			$("#tblData").find("tr:even").addClass("even");
+			$("#tblData").find("tr:odd").addClass("odd");
+			$("#tblData").tableDnD({
+				onDragClass: "myDragClass",
+				onDrop: function(table, row) {
+					$("#tblData").find("tr").removeClass("even odd");
+					$("#tblData").find("tr:even").addClass("even");
+					$("#tblData").find("tr:odd").addClass("odd");
+				}
+			});
 
-      $( function() {
-        $( "#sortable" ).sortable();
-        $( "#sortable" ).disableSelection();
-      });
-    });
-  </script>
+			var iCnt1 = 1;
+			$("#table tr").each(function() {
+				 var id = "tr" + parseInt(iCnt1);
+				 $(this).attr("id", id);
+				 iCnt1++;
+			});
+			$("#table").find("tr:even").addClass("even");
+			$("#table").find("tr:odd").addClass("odd");
+			$("#table").tableDnD({
+				onDragClass: "myDragClass",
+				onDrop: function(table, row) {
+					$("#table").find("tr").removeClass("even odd");
+					$("#table").find("tr:even").addClass("even");
+					$("#table").find("tr:odd").addClass("odd");
+				}
+			});
+
+			$( function() {
+				$( "#sortable" ).sortable();
+				$( "#sortable" ).disableSelection();
+			});
+		});
+	</script>
 </body>
 </html>
