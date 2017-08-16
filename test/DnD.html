@@ -21,8 +21,48 @@
 		html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; } /* HTML5 display-role reset for older browsers */ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; } body { line-height: 1; } ol, ul { list-style: none; } blockquote, q { quotes: none; } blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; } table { border-collapse: collapse; border-spacing: 0; } a{text-decoration: none}
 
 		@import url( "http://fonts.googleapis.com/earlyaccess/notosanskr.css" );
+		html{width:100%;}
+			body {font-family: "Noto Sans KR", sans-serif;letter-spacing: -0.025em; overflow-y:scroll;}
+			#header {height: 47px;background: #25909a}
+			#header .wrap {width: 1024px;margin: 0 auto;position: relative}
+			#header .wrap:after {display: block;content: '';clear: both}
+			#header .logo {margin: 0 35px 0 0;width: 76px;height: 47px}
+			#header .gnb_bg {position: fixed;width: 100%;top: 47px;left: 0;width: 100%;height: 47px;background: #adadad;z-index: 90;overflow: hidden;max-height: 0;opacity: 0;transition: max-height .4s,opacity .4s}
+			#header .top_sub {float: right;font-size: 0;height: 47px;}
+			#header .top_sub .top_icon01 {width: 23px;height: 18px;background: url(../../Images/common/top_icon7.png);display: inline-block;margin: 14.5px 20px 0 0;cursor: pointer}
+			#header .top_sub .top_icon02 {width: 20px;height: 20px;background: url(../../Images/common/top_icon8.png);display: inline-block;margin: 13.5px 0 0;cursor: pointer}
 
-		@media only screen and (max-width: 1024px){
+			.page_info {background: #eee;height: 55px;line-height: 55px}
+			.page_info .wrap {width: 1024px;margin: 0 auto}
+			.page_info h2 {font-size: 15px;color: #303030;font-weight: 500;position: relative;margin: 0 0 0 10px}
+
+			#section {padding: 0 0 100px; min-height:738px;}
+
+			.device_table {background: #fff;padding: 0 30px 40px}
+			.device_table table {width: 100%;text-align: center;}
+			.device_table table th {height: 45px;vertical-align: middle;color: #676a6c;font-size: 13px;border-bottom:1px solid #e7eaec}
+			.device_table table td {height: 34px;vertical-align: middle;color: #7f7f82;font-size: 13px;border-bottom:1px solid #e7eaec}
+			.device_table table td.svc_container {font-size: 0;width: 180px}
+			.device_table table td .svc_con {width: 26px;height: 26px;display: inline-block;margin: 0 4px}
+			.device_table table td.x_btn {width: 50px;padding: 0 15px 0 0;text-align: right}
+			.device_table table td.x_btn img {cursor: pointer;padding: 5px}
+
+			body {font-family: arial, sans-serif;font-size: 14px;}
+			#tblData{font-family: arial, sans-serif;border-collapse: collapse; width: 100%; margin:40px 0;}
+			#tblData td,
+			#tblData th {border: 1px solid #dddddd; text-align: left; padding: 8px; }
+			#tblData th {background-color: #dddddd; }
+			#tblData .even {background-color: #ecf6fc; }
+			#tblData .odd {background-color: #ddeedd; }
+			#tblData .myDragClass {background-color:#D5C0EF; font-size: 14px; }
+			#tblData .nodrag {background-color: lightblue; }
+
+			#table .myDragClass {background-color:#D5C0EF; font-size: 14px; }
+
+			#sortable { list-style-type: none; margin:40px auto; padding: 0;}
+			#sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
+			#sortable li span { position: absolute; margin-left: -1.3em; }
+		@media screen and (max-width: 1024px){
 			html{width:100%;}
 			body {font-family: "Noto Sans KR", sans-serif;letter-spacing: -0.025em; overflow-y:scroll;}
 			#header {height: 47px;background: #25909a}
@@ -65,7 +105,7 @@
 			#sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
 			#sortable li span { position: absolute; margin-left: -1.3em; }
 		}
-		@media only screen and (max-width: 767px){
+		@media screen and (max-width: 767px){
 			#header .wrap{width:100%;}
 			.page_info .wrap{width:100%;}
 			#header .logo {text-align:center;margin: 0 35px 0 0;width: 100%;height: 47px}
